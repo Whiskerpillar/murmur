@@ -5,15 +5,15 @@
 
 #CONFIG Defaults (Please do not change here as it will get overwriten by a the config file)
 #~/murmur.conf Ver 1.0
-boot-type="wifi"
-static-address="false"
-wireless-channel="1"
-wireless-essid="murmur"
-mesh-mtu=""
+BOOT_TYPE="wifi"
+STATIC_ADDRESS="false"
+WIRELESS_CHANNEL="1"
+WIRELESS_ESSID="murmur"
+MESH_MTU=""
 source ~/murmur.conf
 
 echo Config Values
-echo $boot-type $static-address $wireless-channel $wireless-essid $mesh-mtu
+echo $BOOT_TYPE $STATIC_ADDRESS $WIRELESS_CHANNEL $WIRELESS_ESSID $MESH_MTU
 
  
 #FUNCTIONS - - - - -
@@ -30,14 +30,14 @@ echo interfaces.d Config:
 echo Writing...
 echo 'auto wlan0' | sudo tee --append /etc/network/interfaces.d/wlan0
 echo 'iface wlan0 inet manual' | sudo tee --append /etc/network/interfaces.d/wlan0
-echo 'wireless-channel $wireless-channel' | sudo tee --append /etc/network/interfaces.d/wlan0
-echo 'wireless-essid $wireless-essid' | sudo tee --append /etc/network/interfaces.d/wlan0
+echo 'wireless-channel $WIRELESS_CHANNEL' | sudo tee --append /etc/network/interfaces.d/wlan0
+echo 'wireless-essid $WIRELESS_ESSID' | sudo tee --append /etc/network/interfaces.d/wlan0
 echo 'wireless-mode ad-hoc' | sudo tee --append /etc/network/interfaces.d/wlan0
 echo Complete...
 
-if [[ $static-address != "false" ]]; then
-	echo Setting Static Address: $static-address
-	sudo ifconfig bat0 $static-address
+if [[ $STATIC_ADDRESS != "false" ]]; then
+	echo Setting Static Address: $STATIC_ADDRESS
+	sudo ifconfig bat0 $STATIC_ADDRESS
 	fi
 
 
@@ -46,7 +46,7 @@ sudo service wpa_supplicant stop
 
 echo Starting boot...
 sudo batctl if add wlan0
-sudo ifconfig bat0 mtu $mesh-mtu
+sudo ifconfig bat0 mtu $MESH_MTU
 sudo ifconfig wlan0 up
 sudo ifconfig bat0 up
 echo Provison ended.
@@ -59,7 +59,7 @@ sudo rm /etc/network/interfaces.d/wlan0
 
 
 #SCRIPT
-if [[$USEMURMUR = "y"]]; then
+if [[$BOOT_TYPE = "murmur"]]; then
 		provision-murmur
 	else
 		revert-to-wireless
