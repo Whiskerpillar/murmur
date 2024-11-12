@@ -18,7 +18,7 @@ echo $BOOT_TYPE $STATIC_ADDRESS $WIRELESS_CHANNEL $WIRELESS_ESSID $MESH_MTU
  
 #FUNCTIONS - - - - -
 
-function provisionmurmur {
+function provisionMurmur {
 
 echo Starting Murmur v1.0 network provision for Rasbian
 echo
