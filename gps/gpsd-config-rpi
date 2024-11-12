@@ -1,0 +1,12 @@
+# /etc/default/gpsd
+\# Devices gpsd should collect at boot time.
+START_DAMON="true"
+
+# They need to be read/writable, either by user gpsd or the group dialout.
+DEVICES=""
+
+# Other options you want to pass to gpsd
+GPSD_OPTIONS="/dev/ttyACM0 -G -n"
+
+# Automatically hot add/remove USB GPS devices via gpsdctl
+USBAUTO="true"
