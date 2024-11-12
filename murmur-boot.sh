@@ -5,11 +5,11 @@
 
 #CONFIG Defaults (Please do not change here as it will get overwriten by a the config file)
 #~/murmur.conf Ver 1.0
-boot-type=wifi
-static-address=false
-wireless-channel=1
-wireless-essid=murmur
-mesh-mtu=
+boot-type="wifi"
+static-address="false"
+wireless-channel="1"
+wireless-essid="murmur"
+mesh-mtu=""
 source ~/murmur.conf
 
 echo Config Values
