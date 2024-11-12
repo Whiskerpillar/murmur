@@ -10,7 +10,7 @@ STATIC_ADDRESS="false"
 WIRELESS_CHANNEL="1"
 WIRELESS_ESSID="murmur"
 MESH_MTU=""
-source ~/murmur.conf
+source ~/murmur/murmur.conf
 
 echo Config Values
 echo $BOOT_TYPE $STATIC_ADDRESS $WIRELESS_CHANNEL $WIRELESS_ESSID $MESH_MTU
@@ -18,7 +18,7 @@ echo $BOOT_TYPE $STATIC_ADDRESS $WIRELESS_CHANNEL $WIRELESS_ESSID $MESH_MTU
  
 #FUNCTIONS - - - - -
 
-function provision-murmur {
+function provisionmurmur {
 
 echo Starting Murmur v1.0 network provision for Rasbian
 echo
@@ -52,17 +52,17 @@ sudo ifconfig bat0 up
 echo Provison ended.
 }
 
-function revert-to-wireless {
+function revertToWireless {
 echo Using basic wireless. 
 sudo rm /etc/network/interfaces.d/wlan0
 }
 
 
 #SCRIPT
-if [[$BOOT_TYPE = "murmur"]]; then
-		provision-murmur
+if [[ $BOOT_TYPE = "murmur" ]]; then
+		provisionMurmur
 	else
-		revert-to-wireless
+		revertToWireless
 	fi
 
 sudo systemctl restart networking
