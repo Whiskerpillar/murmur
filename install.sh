@@ -1,4 +1,4 @@
-#! /bin/bash/
+#! /bin/bash
 
 echo Provision Raspbian System for Murmur 1.03
 
