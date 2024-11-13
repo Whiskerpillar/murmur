@@ -30,8 +30,8 @@ echo interfaces.d Config:
 echo Writing...
 echo 'auto wlan0' | sudo tee --append /etc/network/interfaces.d/wlan0
 echo 'iface wlan0 inet manual' | sudo tee --append /etc/network/interfaces.d/wlan0
-echo 'wireless-channel $WIRELESS_CHANNEL' | sudo tee --append /etc/network/interfaces.d/wlan0
-echo 'wireless-essid $WIRELESS_ESSID' | sudo tee --append /etc/network/interfaces.d/wlan0
+echo 'wireless-channel' $WIRELESS_CHANNEL | sudo tee --append /etc/network/interfaces.d/wlan0
+echo 'wireless-essid' $WIRELESS_ESSID | sudo tee --append /etc/network/interfaces.d/wlan0
 echo 'wireless-mode ad-hoc' | sudo tee --append /etc/network/interfaces.d/wlan0
 echo Complete...
 
