@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#Murmur v1.02 network provision for Rasbian
+#Murmur v1.03 network provision for Rasbian
 #AM 11/24
 
 #CONFIG Defaults (Please do not change here as it will get overwriten by a the config file)
@@ -10,7 +10,7 @@ STATIC_ADDRESS="false"
 WIRELESS_CHANNEL="1"
 WIRELESS_ESSID="murmur"
 MESH_MTU=""
-source ~/murmur/murmur.conf
+source /etc/murmur/murmur.conf
 
 echo Config Values
 echo $BOOT_TYPE $STATIC_ADDRESS $WIRELESS_CHANNEL $WIRELESS_ESSID $MESH_MTU
@@ -55,6 +55,7 @@ echo Provison ended.
 function revertToWireless {
 echo Using basic wireless. 
 sudo rm /etc/network/interfaces.d/wlan0
+echo If you are running this post start-up you will need to restart to reconnect.
 }
 
 
