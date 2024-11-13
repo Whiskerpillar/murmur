@@ -15,6 +15,7 @@ sudo mv ~/murmur/murmur.conf /etc/murmur/
 echo We need to add line to rc.local, this is what causes it to boot at start. 
 echo The line is '/usr/local/bin/murmur-boot.sh &' and should be placed a line above the line 'exit 0'
 echo Press any key when ready to open nano to change this. 
+pause
 sudo nano /etc/rc.local
 
 
