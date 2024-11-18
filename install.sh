@@ -5,7 +5,7 @@ echo Provision Raspbian System for Murmur 1.03
 echo Installing Script at /usr/local/bin/
 sudo rm /usr/local/bin/murmur-start.sh
 sudo mv ~/murmur/murmur-start.sh /usr/local/bin/
-chmod +x /usr/local/bin/murmur-start.sh
+sudo chmod +x /usr/local/bin/murmur-start.sh
 
 echo Installing Config at /etc/murmur
 sudo mkdir /etc/murmur
