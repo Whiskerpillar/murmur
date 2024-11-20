@@ -60,6 +60,16 @@ echo If you are running this post start-up you will need to restart to reconnect
 
 
 #SCRIPT
+
+# Log file location
+#LOG_FILE="~/murmur/murmur.log"
+# Function to log messages
+#log() {
+#  echo "$(date +"%Y-%m-%d %H:%M:%S") - $*" >> "$LOG_FILE"
+#}
+# Example usage
+#log "Script started"
+
 if [[ $BOOT_TYPE = "murmur" ]]; then
 		provisionMurmur
 	else
