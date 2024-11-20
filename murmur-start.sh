@@ -41,12 +41,6 @@ echo 'wireless-essid' $WIRELESS_ESSID | sudo tee --append /etc/network/interface
 echo 'wireless-mode ad-hoc' | sudo tee --append /etc/network/interfaces.d/wlan0
 echo Complete...
 
-if [[ $STATIC_ADDRESS != "false" ]]; then
-	echo Setting Static Address: $STATIC_ADDRESS
-	sudo ifconfig bat0 $STATIC_ADDRESS
-	fi
-
-
 echo Stopping wpa services
 sudo service wpa_supplicant stop
 
@@ -55,6 +49,13 @@ sudo batctl if add wlan0
 sudo ifconfig bat0 mtu $MESH_MTU
 sudo ifconfig wlan0 up
 sudo ifconfig bat0 up
+
+#Setting Static Address
+if [[ $STATIC_ADDRESS != "false" ]]; then
+	echo Setting Static Address: $STATIC_ADDRESS
+	sudo ifconfig bat0 $STATIC_ADDRESS
+	fi
+ 
 echo Provison ended.
 }
 
