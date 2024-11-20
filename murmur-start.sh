@@ -3,6 +3,9 @@
 #Murmur v1.03 network provision for Rasbian
 #AM 11/24
 
+#Log to Murmur.log
+exec >> /home/keppler/murmur/murmur.log 2>&1
+
 #CONFIG Defaults (Please do not change here as it will get overwriten by a the config file)
 #~/murmur.conf Ver 1.0
 BOOT_TYPE="wifi"
