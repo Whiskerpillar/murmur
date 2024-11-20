@@ -3,7 +3,7 @@
 echo Provision Raspbian System for Murmur 1.03
 
 echo Installing Script in Home Folder
-sudo chmod +x /usr/local/bin/murmur-start.sh
+sudo chmod +x ~/murmur/murmur-start.sh
 
 echo Setting permision for log file
 sudo chmod +666 ~/murmur/murmur.log
