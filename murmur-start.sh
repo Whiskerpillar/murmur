@@ -13,7 +13,10 @@ STATIC_ADDRESS="false"
 WIRELESS_CHANNEL="1"
 WIRELESS_ESSID="murmur"
 MESH_MTU=""
-source /etc/murmur/murmur.conf
+NODE_NAME="keppler"
+
+#source /etc/murmur/murmur.conf
+source /home/$NODE_NAME/murmur/murmur.conf
 
 echo Config Values
 echo $BOOT_TYPE $STATIC_ADDRESS $WIRELESS_CHANNEL $WIRELESS_ESSID $MESH_MTU
