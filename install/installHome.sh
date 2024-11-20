@@ -6,7 +6,7 @@ echo Installing Script in Home Folder
 sudo chmod +x ~/murmur/murmur-start.sh
 
 echo Setting permision for log file
-sudo chmod +666 ~/murmur/murmur.log
+sudo chmod +777 ~/murmur
 
 
 echo We need to add line to rc.local, this is what causes it to boot at start. 
